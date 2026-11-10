@@ -22,11 +22,14 @@ public class Beverage extends MenuItem {
 
     @Override
     public double computePrice() {
+        //Checks if the size is small,then returns the base price only.
         if (size.equals("S")) {
             return basePrice;
         } else if (size.equals("M")) {
+            // Adds 15 to the base price if the size is medium
             return basePrice + 15;
         } else {
+           // Adds 25 to the base price if the size is large 
             return basePrice + 25;
         }
     }
@@ -41,11 +44,13 @@ public class Beverage extends MenuItem {
     }
 
     public void setSize(String size) {
+        // Checks if the given size is not null and is S, M, or L
         if (size != null &&
             (size.equals("S") || size.equals("M") ||
              size.equals("L"))) {
             this.size = size;
         } else {
+            // Display an error message if the size is invalid
             System.out.println("Error: size must be S, M, or L.");
         }
     }
