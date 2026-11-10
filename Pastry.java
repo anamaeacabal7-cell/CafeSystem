@@ -21,6 +21,7 @@ public class Pastry extends MenuItem {
 
     @Override
     public double computePrice() {
+        // Checks if the pastry is warmed, then adds 10 to the base price 
         if (warmed) {
             return basePrice + 10;
         }
@@ -31,6 +32,7 @@ public class Pastry extends MenuItem {
     
     @Override
     public String getDescription() {
+        // Checks if the pastry is warmed, then adds "(Warmed)" to the description 
         if (warmed) {
             return super.getDescription() + " (Warmed)";
         }
