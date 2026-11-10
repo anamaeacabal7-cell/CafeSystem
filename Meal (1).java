@@ -26,7 +26,7 @@ public class Meal extends MenuItem {
     @Override
     public double computePrice() {
         double price = basePrice;
-
+      // Checks if the meal is upsized, then adds 20 to the price 
         if (upsized) {
             price += 20;
         }
@@ -57,11 +57,13 @@ public class Meal extends MenuItem {
     }
 
     public void setExtraSides(int extraSides) {
+        // Checks if the given number of extra sides is zero or positive 
         if (extraSides >= 0) {
             this.extraSides = extraSides;
         } 
         
         else {
+            // Display an error message if the number of extra sides is negative
             System.out.println("Error: extra sides cannot be negative.");
         }
     }
